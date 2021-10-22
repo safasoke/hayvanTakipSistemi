@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block ust_icerik %}
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+{% endblock %}
+{% block title %}
+    Hayvan Detay
+{% endblock %}
+{% block icerik %}
+    <div class="row">
+        <div class="col-lg-12 pull-center">
+            <div class="col-lg-6 pull-center">
+                <h2 class="page-header"></span> </a> <a
+                        href="#">Küpe No: {{ hayvan.kupe_no }} - Pasaport No: {{ hayvan.pasaport_no }}</a>
+                </h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <table>
+            <tr>
+                <th colspan="2" style="text-align: center">Hayvan Detayları</th>
+
+            </tr>
+            <tr>
+                <td>Küpe No:</td>
+                <td>{{ hayvan.kupe_no }}</td>
+            </tr>
+            <tr>
+                <td>Pasaport No:</td>
+                <td>{{ hayvan.pasaport_no}}</td>
+            </tr>
+            <tr>
+                <td>Padok No:</td>
+                <td>{{ hayvan.padok_no }}</td>
+            </tr>
+            <tr>
+                <td>Irkı:</td>
+                <td>{{ hayvan.irki }}</td>
+            </tr>
+            <tr>
+                <td>Alış Fiyatı:</td>
+                <td>{{ hayvan.alis_fiyati }}</td>
+            </tr>
+            <tr>
+                <td>Satış Fiyatı:</td>
+                <td>{{ hayvan.satis_fiyati }}</td>
+            </tr>
+            <tr>
+                <td>Alış Kg:</td>
+                <td>{{ hayvan.alis_kg }}</td>
+            </tr>
+            <tr>
+                <td>Alış Tarihi:</td>
+                <td>{{ hayvan.alis_tarihi }}</td>
+            </tr>
+            <tr>
+                <td>Cinsiyeti:</td>
+                <td>{{ hayvan.cinsiyet }}</td>
+            </tr>
+            <tr>
+                <td>İşletme:</td>
+                <td>{{ hayvan.isletme }}</td>
+            </tr>
+            <tr>
+                <td>Açıklama:</td>
+                <td>{{ hayvan.aciklama }}</td>
+            </tr>
+            <tr>
+                <td>Alıcı Bilgisi:</td>
+                <td>{{ hayvan.alici_bilgi }}</td>
+            </tr>
+        </table>
+    </div>
+    <div class="row" style="padding: 20px">
+        <div class="col-lg-2 pull-right">
+            <a class="btn btn-primary btn-sm" style="padding: 10px" href="{% url 'hayvan-guncelle' hayvan.pk %}">Güncelle</a>
+            <a class="btn btn-danger btn-sm" style="padding: 10px" href="{% url 'hayvan-sil' hayvan.pk %}">Kaldır</a>
+        </div>
+    </div>
+
+
+{% endblock %}

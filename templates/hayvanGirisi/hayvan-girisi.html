@@ -1,0 +1,25 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    Hayvan Girişi
+{% endblock %}
+
+{% block icerik %}
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <h1 class="page-header">Hayvan Girişi </h1>
+            <form action="{% url 'hayvan-girisi' %}" enctype="multipart/form-data" method="post">
+                {% csrf_token %}
+                {% include 'hayvanGirisi/include/form-include.html' %}
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="submit" value="Kaydet" class="btn pull-right  btn-sm btn-success">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
